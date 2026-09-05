@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="A modern responsive HTML website">
+
+<title>My Awesome Website</title>
+
+<style>
+    /* =========================
+       BASIC RESET
+    ========================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #f5f7fa;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    header {
+        background: #111827;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        padding: 18px 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #38bdf8;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        color: white;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #38bdf8;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+        min-height: 90vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+        color: #38bdf8;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: #dbeafe;
+    }
+
+    .btn {
+        display: inline-block;
+
+        padding: 13px 28px;
+
+        background: #38bdf8;
+        color: #0f172a;
+
+        border-radius: 8px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: white;
+        transform: translateY(-3px);
+    }
+
+    /* =========================
+       GENERAL SECTION
+    ========================== */
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .section-title p {
+        color: #6b7280;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+        background: white;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about-image {
+        background: linear-gradient(
+            135deg,
+            #38bdf8,
+            #2563eb
+        );
+
+        min-height: 300px;
+
+        border-radius: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 70px;
+        color: white;
+    }
+
+    .about-text h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services {
+        background: #f5f7fa;
+    }
+
+    .service-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+    .service-card {
+        background: white;
+
+        padding: 35px 25px;
+
+        border-radius: 12px;
+
+        text-align: center;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+
+        transition: 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .service-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        color: #666;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================== */
+
+    .portfolio {
+        background: white;
+    }
+
+    .portfolio-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+    .portfolio-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #f8fafc;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .portfolio-image {
+        height: 220px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+
+        color: white;
+        font-size: 50px;
+    }
+
+    .portfolio-info {
+        padding: 20px;
+    }
+
+    .portfolio-info h3 {
+        margin-bottom: 8px;
+    }
+
+    .portfolio-info p {
+        color: #666;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+        background: #f5f7fa;
+    }
+
+    .contact-form {
+        max-width: 700px;
+        margin: auto;
+
+        background: white;
+
+        padding: 35px;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+
+        padding: 13px;
+
+        border: 1px solid #ddd;
+
+        border-radius: 7px;
+
+        font-size: 16px;
+
+        outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #2563eb;
+    }
+
+    textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .submit-btn {
+        width: 100%;
+
+        border: none;
+
+        cursor: pointer;
+
+        font-size: 16px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+        background: #111827;
+        color: white;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+    footer p {
+        color: #cbd5e1;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 768px) {
+
+        .nav-links {
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .about-content {
+            grid-template-columns: 1fr;
+        }
+
+        .service-grid,
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     NAVIGATION BAR
+========================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            My<span>Website</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to
+            <span>My Website</span>
+        </h1>
+
+        <p>
+            I create modern, beautiful and responsive
+            websites using HTML and CSS.
+        </p>
+
+        <a href="#contact" class="btn">
+            Get Started
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                Learn more about who I am
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="about-image">
+                💻
+            </div>
+
+            <div class="about-text">
+
+                <h3>
+                    I Build Modern Websites
+                </h3>
+
+                <p>
+                    Hello! I'm a web developer who loves
+                    creating beautiful and user-friendly
+                    websites.
+                </p>
+
+                <p>
+                    This website is built using pure HTML
+                    and CSS. You can customize everything
+                    according to your needs.
+                </p>
+
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================== -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My Services</h2>
+
+            <p>
+                What I can do for you
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Web Design
+                </h3>
+
+                <p>
+                    Modern and attractive website
+                    designs for your business.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Responsive Design
+                </h3>
+
+                <p>
+                    Websites that work perfectly on
+                    mobile, tablet and desktop.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast Websites
+                </h3>
+
+                <p>
+                    Clean and optimized websites
+                    with fast loading speed.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================== -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My Portfolio</h2>
+
+            <p>
+                Some of my recent projects
+            </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+
+                <div class="portfolio-image">
+                    🛒
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        E-Commerce Website
+                    </h3>
+
+                    <p>
+                        A modern online shopping website.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-card">
+
+                <div class="portfolio-image">
+                    🏢
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        Business Website
+                    </h3>
+
+                    <p>
+                        Professional website for a business.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-card">
+
+                <div class="portfolio-image">
+                    🎨
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        Creative Website
+                    </h3>
+
+                    <p>
+                        A creative portfolio website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Have a project? Send me a message.
+            </p>
+
+        </div>
+
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)"
+        >
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Your Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn submit-btn"
+            >
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+        © 2026 MyWebsite. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        alert(
+            "Thank you, " +
+            name +
+            "! Your message has been received."
+        );
+
+    }
+
+</script>
+```
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
